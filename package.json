@@ -53,6 +53,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@supabase/supabase-js": "^2.44.3",
     "@sveltejs/adapter-cloudflare": "^4.6.1",
     "@tanstack/svelte-query": "^5.51.1",
     "bits-ui": "^0.21.12",
