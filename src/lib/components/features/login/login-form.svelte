@@ -28,7 +28,7 @@
   const { form: formData, enhance } = form;
 </script>
 
-<Card class="max-w-[400px]">
+<Card class="w-full max-w-[400px]">
   <CardHeader>
     <CardTitle>login</CardTitle>
     <CardDescription>login to your account</CardDescription>
