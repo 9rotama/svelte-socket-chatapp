@@ -19,13 +19,12 @@
 
 <Story name="Default">
   <Card>
-    <CardContent>
-      <CardHeader>
-        <CardTitle>card title</CardTitle>
-      </CardHeader>
-      <CardFooter>
-        <CardDescription>card description</CardDescription>
-      </CardFooter>
-    </CardContent>
+    <CardHeader>
+      <CardTitle>card title</CardTitle>
+    </CardHeader>
+    <CardContent>card content</CardContent>
+    <CardFooter>
+      <CardDescription>card description</CardDescription>
+    </CardFooter>
   </Card>
 </Story>
