@@ -56,6 +56,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: [...fontFamily.sans],
+        dmSans: ["DM Sans", ...fontFamily.sans],
       },
     },
   },
