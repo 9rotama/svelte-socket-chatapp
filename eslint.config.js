@@ -7,24 +7,6 @@ import unusedImports from "eslint-plugin-unused-imports";
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
-  {
-    plugins: {
-      "unused-imports": unusedImports,
-    },
-    rules: {
-      "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
-      "unused-imports/no-unused-imports": "error",
-      "unused-imports/no-unused-vars": [
-        "warn",
-        {
-          vars: "all",
-          varsIgnorePattern: "^_",
-          args: "after-used",
-          argsIgnorePattern: "^_",
-        },
-      ],
-    },
-  },
   js.configs.recommended,
   ...ts.configs.recommended,
   ...svelte.configs["flat/recommended"],
@@ -48,5 +30,23 @@ export default [
   },
   {
     ignores: ["build/", ".svelte-kit/", "dist/"],
+  },
+  {
+    plugins: {
+      "unused-imports": unusedImports,
+    },
+    rules: {
+      "@typescript-eslint/no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "^_",
+        },
+      ],
+    },
   },
 ];
