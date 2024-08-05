@@ -3,6 +3,7 @@
 
   import { invalidate } from "$app/navigation";
   import { onMount } from "svelte";
+  import { ModeWatcher } from "mode-watcher";
 
   export let data;
   $: ({ session, supabase } = data);
@@ -18,6 +19,7 @@
   });
 </script>
 
-<slot></slot>
+<ModeWatcher />
+<slot />
 
 <style></style>
