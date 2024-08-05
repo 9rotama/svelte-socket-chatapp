@@ -17,7 +17,7 @@
   } from "sveltekit-superforms";
   import { loginFormSchema } from "./schema";
   import { zodClient } from "sveltekit-superforms/adapters";
-  import { LucideLoader, LucideLoaderCircle } from "lucide-svelte";
+  import { LucideLoaderCircle } from "lucide-svelte";
 
   export let data: SuperValidated<Infer<typeof loginFormSchema>>;
 
