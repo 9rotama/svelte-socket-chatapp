@@ -7,7 +7,6 @@
     CardContent,
     CardFooter,
   } from "../../ui/card";
-  import { Label } from "../../ui/label";
   import { Input } from "../../ui/input";
   import { Button } from "../../ui/button";
   import CardDescription from "../../ui/card/card-description.svelte";
@@ -18,6 +17,7 @@
   } from "sveltekit-superforms";
   import { loginFormSchema } from "./schema";
   import { zodClient } from "sveltekit-superforms/adapters";
+  import { LucideLoader, LucideLoaderCircle } from "lucide-svelte";
 
   export let data: SuperValidated<Infer<typeof loginFormSchema>>;
 
@@ -25,7 +25,7 @@
     validators: zodClient(loginFormSchema),
   });
 
-  const { form: formData, enhance } = form;
+  const { form: formData, enhance, message, submitting } = form;
 </script>
 
 <Card class="w-full max-w-[400px]">
@@ -49,9 +49,21 @@
         </Form.Control>
         <Form.FieldErrors />
       </Form.Field>
+      {#if $message}
+        <div class="text-sm text-destructive">{$message}</div>
+      {/if}
     </CardContent>
     <CardFooter>
-      <Button class="w-full" type="submit">login</Button>
+      <Button
+        class="flex w-full flex-row gap-2"
+        type="submit"
+        disabled={$submitting}
+      >
+        {#if $submitting}
+          <LucideLoaderCircle class="animate-spin" />
+        {/if}
+        login
+      </Button>
     </CardFooter>
   </form>
 </Card>
