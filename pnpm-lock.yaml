@@ -48,6 +48,9 @@ importers:
       eslint-plugin-svelte:
         specifier: ^2.46.1
         version: 2.46.1(eslint@9.19.0(jiti@1.21.7))(svelte@5.19.3)
+      formsnap:
+        specifier: ^2.0.0
+        version: 2.0.0(svelte@5.19.3)(sveltekit-superforms@2.23.1(@sveltejs/kit@2.16.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.19.3)(vite@6.0.11(@types/node@22.10.10)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.19.3)(vite@6.0.11(@types/node@22.10.10)(jiti@1.21.7)(yaml@2.7.0)))(@types/json-schema@7.0.15)(svelte@5.19.3)(typescript@5.7.3))
       globals:
         specifier: ^15.14.0
         version: 15.14.0
@@ -1066,6 +1069,13 @@ packages:
     resolution: {integrity: sha512-Ld2g8rrAyMYFXBhEqMz8ZAHBi4J4uS1i/CxGMDnjyFWddMXLVcDp051DZfu+t7+ab7Wv6SMqpWmyFIj5UbfFvg==}
     engines: {node: '>=14'}
 
+  formsnap@2.0.0:
+    resolution: {integrity: sha512-W61elddvdzeBEs10nNvwxQnx/FctJFHBXPk9uluNQAckHo1nuSUvSQGIjtLjTKIbQdQnwEOoxqWrk9tuv0U7hA==}
+    engines: {node: '>=18', pnpm: '>=8.7.0'}
+    peerDependencies:
+      svelte: ^5.0.0
+      sveltekit-superforms: ^2.19.0
+
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
@@ -1665,6 +1675,12 @@ packages:
     resolution: {integrity: sha512-K3AmlySeFifF/cKgsYNv5uXqMVNln0NBAacOYgmkQStLa/UoU0LhfAACU6Gr+YYC8bOCHdVmFNoKuDbMEsppJg==}
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
+
+  svelte-toolbelt@0.5.0:
+    resolution: {integrity: sha512-t3tenZcnfQoIeRuQf/jBU7bvTeT3TGkcEE+1EUr5orp0lR7NEpprflpuie3x9Dn0W9nOKqs3HwKGJeeN5Ok1sQ==}
+    engines: {node: '>=18', pnpm: '>=8.7.0'}
+    peerDependencies:
+      svelte: ^5.0.0-next.126
 
   svelte-toolbelt@0.7.0:
     resolution: {integrity: sha512-i/Tv4NwAWWqJnK5H0F8y/ubDnogDYlwwyzKhrspTUFzrFuGnYshqd2g4/R43ds841wmaFiSW/HsdsdWhPOlrAA==}
@@ -2947,6 +2963,12 @@ snapshots:
       cross-spawn: 7.0.6
       signal-exit: 4.1.0
 
+  formsnap@2.0.0(svelte@5.19.3)(sveltekit-superforms@2.23.1(@sveltejs/kit@2.16.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.19.3)(vite@6.0.11(@types/node@22.10.10)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.19.3)(vite@6.0.11(@types/node@22.10.10)(jiti@1.21.7)(yaml@2.7.0)))(@types/json-schema@7.0.15)(svelte@5.19.3)(typescript@5.7.3)):
+    dependencies:
+      svelte: 5.19.3
+      svelte-toolbelt: 0.5.0(svelte@5.19.3)
+      sveltekit-superforms: 2.23.1(@sveltejs/kit@2.16.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.19.3)(vite@6.0.11(@types/node@22.10.10)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.19.3)(vite@6.0.11(@types/node@22.10.10)(jiti@1.21.7)(yaml@2.7.0)))(@types/json-schema@7.0.15)(svelte@5.19.3)(typescript@5.7.3)
+
   fraction.js@4.3.7: {}
 
   fsevents@2.3.3:
@@ -3440,6 +3462,12 @@ snapshots:
 
   svelte-sonner@0.3.28(svelte@5.19.3):
     dependencies:
+      svelte: 5.19.3
+
+  svelte-toolbelt@0.5.0(svelte@5.19.3):
+    dependencies:
+      clsx: 2.1.1
+      style-to-object: 1.0.8
       svelte: 5.19.3
 
   svelte-toolbelt@0.7.0(svelte@5.19.3):
