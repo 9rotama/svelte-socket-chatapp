@@ -5,14 +5,13 @@
 	import * as Form from '$lib/components/ui/form';
 	import { type SignInFormValues } from '../../lib/features/auth/models/schema';
 	import { type SuperValidated, superForm } from 'sveltekit-superforms';
-	import SuperDebug from 'sveltekit-superforms';
 	import { type ControlAttrs } from 'formsnap';
 
 	let { data }: { data: { form: SuperValidated<SignInFormValues> } } = $props();
 
-	const form = superForm(data.form);
+	const form = superForm<SignInFormValues>(data.form);
 
-	const { form: formData, enhance } = form;
+	const { form: formData, enhance, message } = form;
 </script>
 
 <main class="grid h-screen w-screen place-items-center">
@@ -24,7 +23,7 @@
 			</Card.Title>
 		</Card.Header>
 
-		<form method="POST" use:enhance>
+		<form method="POST" action="?/signin" use:enhance>
 			<Card.Content>
 				<Form.Field {form} name="username">
 					<Form.Control>
@@ -39,14 +38,20 @@
 					<Form.Control>
 						{#snippet children({ props }: { props: ControlAttrs })}
 							<Form.Label>パスワード</Form.Label>
-							<Input {...props} autocomplete="new-password" bind:value={$formData.password} />
+							<Input
+								type="password"
+								{...props}
+								autocomplete="new-password"
+								bind:value={$formData.password}
+							/>
 						{/snippet}
 					</Form.Control>
 					<Form.FieldErrors />
 				</Form.Field>
 			</Card.Content>
-			<Card.Footer>
+			<Card.Footer class="flex flex-col gap-4">
 				<Form.Button class="w-full">ログイン</Form.Button>
+				{#if $message}<span class="text-sm font-medium text-destructive">{$message.text}</span>{/if}
 			</Card.Footer>
 		</form>
 	</Card.Root>
