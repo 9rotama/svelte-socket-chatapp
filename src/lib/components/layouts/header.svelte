@@ -4,8 +4,13 @@
 	import { buttonVariants } from '$lib/components/ui/button';
 </script>
 
-<header class="flex w-full flex-row items-center justify-between p-1">
-	<MessageCircleHeart class="text-primary" />
+<header class="flex h-12 w-full flex-row items-center justify-between p-1">
+	<a
+		href="/chat"
+		class="grid size-10 place-items-center rounded-full text-primary transition-colors hover:text-primary/50"
+	>
+		<MessageCircleHeart />
+	</a>
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger class={buttonVariants({ variant: 'ghost' })}>
 			<User /><ChevronDown />
